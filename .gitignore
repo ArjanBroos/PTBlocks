@@ -1,0 +1,7 @@
+*.opensdf
+*.sdf
+*.pdb
+/Debug
+/Release
+/PTBlocks/Debug
+/PTBlocks/Release
