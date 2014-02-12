@@ -28,6 +28,11 @@ void Application::Draw(unsigned char* pixels, unsigned width, unsigned height) {
 	window.display();
 }
 
+// Sets the title
+void Application::SetTitle(const std::string& title) {
+	window.setTitle(title);
+}
+
 // Returns the width of the window
 unsigned Application::GetWidth() const {
 	return width;

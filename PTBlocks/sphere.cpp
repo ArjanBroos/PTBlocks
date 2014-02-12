@@ -46,25 +46,23 @@ Vector Sphere::GetNormal(const Point& p) const {
 }
 
 // Returns a random point on the surface of this shape
-Point Sphere::GetRandomPointOnSurface() const {
+Point Sphere::GetRandomPointOnSurface(RNG& rng) const {
 	// Keep generating random coordinates within cube around unit sphere
 	// Reject any points outside the unit sphere
-	std::mt19937 mt((unsigned)time(0));
-	std::uniform_real_distribution<> urd(-1, 1);
-	float x = (float)urd(mt);
-	float y = (float)urd(mt);
-	float z = (float)urd(mt);
-	float length = x*x + y*y + z*z;
+	float x = 1.f - 2.f * rng.Random();
+	float y = 1.f - 2.f * rng.Random();
+	float z = 1.f - 2.f * rng.Random();
+	float lengthSquared = x*x + y*y + z*z;
 	// Expected number of iterations < 2
-	while (length > 1.f) {
-		x = (float)urd(mt);
-		y = (float)urd(mt);
-		z = (float)urd(mt);
-		length = x*x + y*y + z*z;
+	while (lengthSquared > 1.f) {
+		x = 1.f - 2.f * rng.Random();
+		y = 1.f - 2.f * rng.Random();
+		z = 1.f - 2.f * rng.Random();
+		lengthSquared = x*x + y*y + z*z;
 	}
 
 	// Point on surface of sphere
-	float invLength = 1.f / length;
+	float invLength = 1.f / sqrtf(lengthSquared);
 	Point p(x, y, z);
-	return p * r * invLength;
+	return p * r * invLength + c;
 }

@@ -21,5 +21,5 @@ public:
 	Vector	GetNormal(const Point& p) const;
 
 	// Returns a random point on the surface of this shape
-	Point	GetRandomPointOnSurface() const;
+	Point	GetRandomPointOnSurface(RNG& rng) const;
 };

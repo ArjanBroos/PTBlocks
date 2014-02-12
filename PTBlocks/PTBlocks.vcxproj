@@ -17,11 +17,15 @@
     <ClCompile Include="color.cpp" />
     <ClCompile Include="film.cpp" />
     <ClCompile Include="filter.cpp" />
+    <ClCompile Include="lambertmaterial.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="materials.cpp" />
+    <ClCompile Include="mirrormaterial.cpp" />
+    <ClCompile Include="plane.cpp" />
     <ClCompile Include="point.cpp" />
+    <ClCompile Include="pointlight.cpp" />
     <ClCompile Include="primitive.cpp" />
     <ClCompile Include="ray.cpp" />
+    <ClCompile Include="rng.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="sphere.cpp" />
     <ClCompile Include="vector.cpp" />
@@ -34,12 +38,18 @@
     <ClInclude Include="film.h" />
     <ClInclude Include="filter.h" />
     <ClInclude Include="geometry.h" />
+    <ClInclude Include="intrec.h" />
+    <ClInclude Include="lambertmaterial.h" />
     <ClInclude Include="light.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="mirrormaterial.h" />
+    <ClInclude Include="plane.h" />
     <ClInclude Include="point.h" />
+    <ClInclude Include="pointlight.h" />
     <ClInclude Include="primitive.h" />
     <ClInclude Include="ray.h" />
+    <ClInclude Include="rng.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="shape.h" />
     <ClInclude Include="sphere.h" />
@@ -85,7 +95,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;SFML_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -100,7 +110,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;SFML_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

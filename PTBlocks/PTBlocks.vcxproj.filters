@@ -70,6 +70,15 @@
     <Filter Include="Source Files\lights">
       <UniqueIdentifier>{228af34b-8972-42b4-b816-4c796cf56802}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\rng">
+      <UniqueIdentifier>{7b3bce8f-c22c-4806-99a2-3cc15e7039fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rng">
+      <UniqueIdentifier>{e522a9e6-20a9-4f2d-bc53-71106642dd58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\intersectionrecord">
+      <UniqueIdentifier>{d5a03238-c308-4d8c-b331-ea371e7eb838}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp">
@@ -108,11 +117,23 @@
     <ClCompile Include="scene.cpp">
       <Filter>Source Files\scene</Filter>
     </ClCompile>
-    <ClCompile Include="materials.cpp">
-      <Filter>Source Files\materials</Filter>
-    </ClCompile>
     <ClCompile Include="arealight.cpp">
       <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="pointlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="lambertmaterial.cpp">
+      <Filter>Source Files\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="rng.cpp">
+      <Filter>Source Files\rng</Filter>
+    </ClCompile>
+    <ClCompile Include="plane.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="mirrormaterial.cpp">
+      <Filter>Source Files\materials</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +187,24 @@
     </ClInclude>
     <ClInclude Include="arealight.h">
       <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="pointlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lambertmaterial.h">
+      <Filter>Header Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="rng.h">
+      <Filter>Header Files\rng</Filter>
+    </ClInclude>
+    <ClInclude Include="intrec.h">
+      <Filter>Header Files\intersectionrecord</Filter>
+    </ClInclude>
+    <ClInclude Include="plane.h">
+      <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="mirrormaterial.h">
+      <Filter>Header Files\materials</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

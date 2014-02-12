@@ -1,6 +1,7 @@
 #pragma once
 
 #include "geometry.h"
+#include "rng.h"
 
 // The abstract base class for all shapes
 class Shape {
@@ -13,5 +14,5 @@ public:
 	virtual Vector	GetNormal(const Point& p) const = 0;
 
 	// Returns a random point on the surface of this shape
-	virtual Point	GetRandomPointOnSurface() const = 0;
+	virtual Point	GetRandomPointOnSurface(RNG& rng) const = 0;
 };

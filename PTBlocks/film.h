@@ -21,6 +21,8 @@ public:
 	void			AddColor(const Color& c, unsigned x, unsigned y);
 	// Divides all pixel colors by n
 	void			DivideAllColors(unsigned n);
+	// Multiplies all colors by f
+	void			MultiplyAllColors(float f);
 
 private:
 	unsigned		width;	// Width in pixels

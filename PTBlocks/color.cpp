@@ -19,6 +19,17 @@ Color& Color::operator+=(const Color& c) {
 	return *this;
 }
 
+Color Color::operator*(const Color& c) const {
+	return Color(r * c.r, g * c.g, b * c.b);
+}
+
+Color& Color::operator*=(const Color& c) {
+	r *= c.r;
+	g *= c.g;
+	b *= c.b;
+	return *this;
+}
+
 Color Color::operator*(float s) const {
 	return Color(r * s, g * s, b * s);
 }
@@ -39,4 +50,8 @@ Color& Color::operator/=(float s) {
 	g /= s;
 	b /= s;
 	return *this;
+}
+
+Color operator*(float s, const Color& c) {
+	return Color(c.r * s, c.g * s, c.b * s);
 }

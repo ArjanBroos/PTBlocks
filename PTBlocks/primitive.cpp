@@ -1,7 +1,7 @@
 #include "primitive.h"
 
 // Initializes this primitive with a shape and a material
-Primitive::Primitive(Shape* shape, const Material& material) : shape(shape), material(material) {
+Primitive::Primitive(Shape* shape, Material* material) : shape(shape), material(material) {
 }
 
 // Returns a pointer to the shape
@@ -10,6 +10,6 @@ Shape* Primitive::GetShape() {
 }
 
 // Returns the material
-Material Primitive::GetMaterial() {
+Material* Primitive::GetMaterial() {
 	return material;
 }

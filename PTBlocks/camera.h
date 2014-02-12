@@ -2,6 +2,7 @@
 
 #include "geometry.h"
 #include "film.h"
+#include "rng.h"
 
 // Represents a pinhole camera
 class Camera {
@@ -12,8 +13,10 @@ public:
 	Camera(const Point& position, const Vector& direction, const Vector& up,
 		unsigned filmWidth, unsigned filmHeight, float FoV);
 
-	// Returns a ray from the viewpoint through pixel (x, y)
+	// Returns a ray from the viewpoint through the center of pixel (x, y)
 	Ray		GetRay(unsigned x, unsigned y) const;
+	// Returns a ray through pixel (x, y), randomly jittered around its center
+	Ray		GetJitteredRay(unsigned x, unsigned y, RNG& rng) const;
 
 	// Returns a pointer to the camera's film
 	Film*	GetFilm();

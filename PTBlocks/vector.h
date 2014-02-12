@@ -16,7 +16,11 @@ public:
 	// Returns the length of the vector squared - faster than Length()
 	float LengthSquared() const;
 
+	// Comparison operator
+	bool operator==(const Vector& v) const;
+
 	// Arithmetic operators
+	Vector operator-() const;
 	Vector operator+(const Vector& v) const;
 	Vector& operator+=(const Vector& v);
 	Vector operator*(float s) const;

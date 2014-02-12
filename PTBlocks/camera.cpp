@@ -8,10 +8,10 @@ Camera::Camera(const Point& position, const Vector& direction, const Vector& up,
 	: pos(position), film(filmWidth, filmHeight) {
 		// Establish coordinate system with u, v and dir
 		dir = Normalize(direction);
-		v = Normalize(Cross(dir, up));
+		v = Normalize(Cross(up, dir));
 		u = Cross(v, dir);
 
-		FoV *= 180.f / (float)M_PI; // Convert FoV to radians
+		FoV *= 180.f / PI; // Convert FoV to radians
 		float halfWidth = tanf(FoV/2.f);
 		float aspectRatio = (float)filmWidth / (float)filmHeight;
 		u *= halfWidth; // Make u's length half of the film's width
@@ -27,6 +27,19 @@ Camera::Camera(const Point& position, const Vector& direction, const Vector& up,
 Ray	Camera::GetRay(unsigned x, unsigned y) const {
 	Vector vx = (xmin + x*dx) * v;
 	Vector vy = (ymin + y*dy) * u;
+	return Ray(pos, Normalize(vx + vy + dir));
+}
+
+// Returns a ray through pixel (x, y), randomly jittered around its center
+Ray	Camera::GetJitteredRay(unsigned x, unsigned y, RNG& rng) const {
+	const float pxmin = -1.f + (float)x * dx;		// Pixel x mininum
+	const float pymin = -1.f + (float)y * dy;		// Pixel y minimum
+
+	const float px = pxmin + rng.Random() * dx;
+	const float py = pymin + rng.Random() * dy;
+
+	Vector vx = px * v;
+	Vector vy = py * u;
 	return Ray(pos, Normalize(vx + vy + dir));
 }
 

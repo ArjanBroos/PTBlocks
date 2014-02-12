@@ -32,7 +32,15 @@ void Film::AddColor(const Color& c, unsigned x, unsigned y) {
 
 // Divides all pixel colors by n
 void Film::DivideAllColors(unsigned n) {
+	float f = 1.f / (float)n;
 	for (unsigned i = 0; i < width*height; i++) {
-		pixels[i] /= (float)n;
+		pixels[i] *= f;
+	}
+}
+
+// Multiplies all pixel colors by f
+void Film::MultiplyAllColors(float f) {
+	for (unsigned i = 0; i < width*height; i++) {
+		pixels[i] *= f;
 	}
 }

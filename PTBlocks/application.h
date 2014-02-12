@@ -14,6 +14,8 @@ public:
 	void				HandleEvents();
 	// Draws pixels to the window - assumes RGB format
 	void				Draw(unsigned char* pixels, unsigned width, unsigned height);
+	// Sets the title of the window
+	void				SetTitle(const std::string& title);
 
 	// Returns the width of the window
 	unsigned			GetWidth() const;

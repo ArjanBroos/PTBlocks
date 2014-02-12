@@ -19,6 +19,14 @@ float Vector::LengthSquared() const {
 	return x*x + y*y + z*z;
 }
 
+bool Vector::operator==(const Vector& v) const {
+	return (x == v.x) && (y == v.y) && (z == v.z);
+}
+
+Vector Vector::operator-() const {
+	return Vector(-x, -y, -z);
+}
+
 Vector Vector::operator+(const Vector& v) const {
 	return Vector(x + v.x, y + v.y, z + v.z);
 }
