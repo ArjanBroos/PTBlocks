@@ -7,7 +7,11 @@
 // The abstract base class for all lights
 class Light {
 public:
-	Color			Le;	// Emitted light
+	Color			c;	// Color of light
+	float			i;	// Intensity of light
+	float			kc;	// Constant attenuation factor
+	float			kl; // Linear attenuation factor
+	float			kq; // Quadratic attenunation factor
 
 	// Returns true when this light intersects ray
 	// If so, output parameter t becomes the distance along ray to the closest intersection
@@ -15,4 +19,10 @@ public:
 	
 	// Returns a ray from p to a random point on the light
 	virtual Ray		GetRandomRayToLightFrom(const Point& p, RNG& rng) const = 0;
+
+	// Returns the attenuation factor of the light, given the distance
+	float	GetAttenuation(float d) const;
+
+	// Returns the emitted light
+	Color	Le() const;
 };

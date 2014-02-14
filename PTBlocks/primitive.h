@@ -10,11 +10,11 @@ public:
 	Primitive(Shape* shape, Material* material);
 
 	// Returns a pointer to the shape
-	Shape*		GetShape();
+	const Shape*	GetShape() const;
 	// Returns the material
-	Material*	GetMaterial();
+	const Material*	GetMaterial() const;
 
 private:
-	Shape*		shape;		// Shape of the object
-	Material*	material;	// Material of the object
+	Shape*			shape;		// Shape of the object
+	Material*		material;	// Material of the object
 };

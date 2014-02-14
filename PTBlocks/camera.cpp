@@ -44,6 +44,11 @@ Ray	Camera::GetJitteredRay(unsigned x, unsigned y, RNG& rng) const {
 }
 
 // Returns a pointer to the camera's film
-Film* Camera::GetFilm() {
+const Film* Camera::GetFilm() const {
 	return &film;
+}
+
+// Adds a color to the film
+void Camera::AddColor(const Color& c, unsigned x, unsigned y) {
+	film.AddColor(c, x, y);
 }

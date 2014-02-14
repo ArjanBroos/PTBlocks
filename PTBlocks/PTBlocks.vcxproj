@@ -18,6 +18,7 @@
     <ClCompile Include="film.cpp" />
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="lambertmaterial.cpp" />
+    <ClCompile Include="light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mirrormaterial.cpp" />
     <ClCompile Include="plane.cpp" />
@@ -25,6 +26,7 @@
     <ClCompile Include="pointlight.cpp" />
     <ClCompile Include="primitive.cpp" />
     <ClCompile Include="ray.cpp" />
+    <ClCompile Include="renderer.cpp" />
     <ClCompile Include="rng.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="sphere.cpp" />
@@ -49,6 +51,7 @@
     <ClInclude Include="pointlight.h" />
     <ClInclude Include="primitive.h" />
     <ClInclude Include="ray.h" />
+    <ClInclude Include="renderer.h" />
     <ClInclude Include="rng.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="shape.h" />

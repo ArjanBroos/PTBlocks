@@ -5,11 +5,11 @@ Primitive::Primitive(Shape* shape, Material* material) : shape(shape), material(
 }
 
 // Returns a pointer to the shape
-Shape* Primitive::GetShape() {
+const Shape* Primitive::GetShape() const {
 	return shape;
 }
 
 // Returns the material
-Material* Primitive::GetMaterial() {
+const Material* Primitive::GetMaterial() const {
 	return material;
 }

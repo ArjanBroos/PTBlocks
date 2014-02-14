@@ -1,8 +1,21 @@
 #include "arealight.h"
 
-// Initializes area light with given shape (cannot be NULL)
+// Initializes white area light with given shape (cannot be NULL)
 AreaLight::AreaLight(Shape* shape) : shape(shape) {
-	Le = Color(1.f, 1.f, 1.f);
+	c = Color(1.f, 1.f, 1.f);
+	i = 1.f;
+	kc = 1.f;
+	kl = 0.1f;
+	kq = 0.05f;
+}
+
+// Initializes area light with given shape (cannot be NULL)
+AreaLight::AreaLight(Shape* shape, Color color, float intensity) : shape(shape) {
+	c = color;
+	i = intensity;
+	kc = 1.f;
+	kl = 0.1f;
+	kq = 0.05f;
 }
 
 // Returns true when this light intersects ray

@@ -11,12 +11,12 @@ void Scene::AddLight(Light* light) {
 }
 
 // Returns the primitives in the scene
-std::vector<Primitive>* Scene::GetPrimivites() {
+const std::vector<Primitive>* Scene::GetPrimivites() const {
 	return &primitives;
 }
 
 // Returns the lights in the scene
-std::vector<Light*>* Scene::GetLights() {
+const std::vector<Light*>* Scene::GetLights() const {
 	return &lights;
 }
 	
@@ -25,7 +25,7 @@ std::vector<Light*>* Scene::GetLights() {
 // And *primitive will point to the closest intersected primitive or NULL
 // And *light will point to the closest intersected light or NULL
 // Depending on whether a light or a primitive is closest
-bool Scene::Intersect(const Ray& ray, IntRec& intRec) {
+bool Scene::Intersect(const Ray& ray, IntRec& intRec) const {
 	bool intersect = false;
 	intRec.t = INFINITY;
 	float tt;
@@ -58,7 +58,7 @@ bool Scene::Intersect(const Ray& ray, IntRec& intRec) {
 }
 
 // Returns true if given ray intersects with scene
-bool Scene::ShadowRay(const Ray& ray) {
+bool Scene::ShadowRay(const Ray& ray) const {
 	float tt;
 
 	// Return true if it hits a primitive
