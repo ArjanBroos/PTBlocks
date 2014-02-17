@@ -8,8 +8,12 @@ Camera::Camera(const Point& position, const Vector& direction, const Vector& up,
 	: pos(position), film(filmWidth, filmHeight) {
 		// Establish coordinate system with u, v and dir
 		dir = Normalize(direction);
-		v = Normalize(Cross(up, dir));
-		u = Cross(v, dir);
+		v = Normalize(Cross(dir, up));
+		u = Cross(dir, v);
+
+		//Set initial rotation
+		ry = 0;
+		rz = 0;
 
 		FoV *= 180.f / PI; // Convert FoV to radians
 		float halfWidth = tanf(FoV/2.f);
@@ -21,6 +25,12 @@ Camera::Camera(const Point& position, const Vector& direction, const Vector& up,
 		dy = 2.f / (float)filmHeight;
 		xmin = -1.f + dx / 2.f;
 		ymin = -1.f + dy / 2.f;
+}
+
+void Camera::walk(float x)
+{
+	pos.x += pos.x*cos(ry);
+	pos.z += -pos.x*sin(ry);
 }
 
 // Returns a ray from the viewpoint through pixel (x, y)

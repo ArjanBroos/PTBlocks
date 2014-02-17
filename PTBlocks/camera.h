@@ -24,6 +24,10 @@ public:
 	// Adds a color to the film
 	void		AddColor(const Color& c, unsigned x, unsigned y);
 
+	void walk(float x);
+	void strafe(float x);
+	void elevate(float x);
+
 private:
 	Point		pos;	// Position
 	Vector		dir;	// Direction camera is looking at
@@ -31,6 +35,8 @@ private:
 	Vector		v;		// Right direction of film plane
 	Film		film;	// Film to project light on
 
+	float		ry;		// Degree of rotation around y-axis
+	float		rz;		// Degree of rotation around z-axis
 	float		xmin;	// Minimum normalized x-coordinate on film plane
 	float		ymin;	// Minimum normalized y-coordinate on film plane
 	float		dx;		// Difference in normalized x-coordinate of pixels on film plane
