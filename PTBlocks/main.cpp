@@ -16,7 +16,7 @@
 #include "renderer.h"
 
 std::string GetTitle(unsigned nIterations);
-
+//Test Jesper
 int main() {
 	RNG	rng;
 
