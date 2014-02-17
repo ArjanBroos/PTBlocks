@@ -44,3 +44,12 @@ void Film::MultiplyAllColors(float f) {
 		pixels[i] *= f;
 	}
 }
+
+// Resets all pixels
+void Film::Reset() {
+	delete[] pixels;
+	pixels = new Color[width*height];
+	for (unsigned i = 0; i < width*height; i++) {
+		pixels[i] = Color(0,0,0);
+	}
+}

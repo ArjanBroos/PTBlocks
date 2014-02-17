@@ -24,9 +24,10 @@ public:
 	// Adds a color to the film
 	void		AddColor(const Color& c, unsigned x, unsigned y);
 
-	void walk(float x);
-	void strafe(float x);
-	void elevate(float x);
+	void Walk(float x);
+	void Strafe(float x);
+	void Elevate(float x);
+	void Reset();
 
 private:
 	Point		pos;	// Position

@@ -9,10 +9,54 @@ Application::Application(unsigned width, unsigned height, const std::string& tit
 
 // Handles input events
 void Application::HandleEvents() {
-	sf::Event e;
-	while (window.pollEvent(e)) {
-		if (e.type == sf::Event::Closed)
+	sf::Event event;
+
+	while (window.pollEvent(event))
+	{
+		switch (event.type) 
+		{
+		case sf::Event::Closed:
 			window.close();
+			break;
+		case sf::Event::KeyReleased:
+			switch (event.key.code)
+			{
+			case sf::Keyboard::Escape:
+				window.close();
+				break;
+			}
+			break;
+		}
+
+	}
+}
+
+// Handles continuous pressed keys
+void Application::pollKeyboard(Camera& camera, bool& moved) 
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		camera.Walk(.1f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		camera.Walk(-.1f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		camera.Strafe(-.1f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		camera.Strafe(.1f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+		camera.Elevate(.1f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl)) {
+		camera.Elevate(-.1f);
+		moved = true;
 	}
 }
 

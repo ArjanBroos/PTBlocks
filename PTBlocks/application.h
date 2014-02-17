@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 #include <string>
+#include "camera.h"
 
 // The main application
 class Application {
@@ -12,6 +13,8 @@ public:
 
 	// Handles input events
 	void				HandleEvents();
+	// Handles continuous pressed keys
+	void				pollKeyboard(Camera& camera, bool& moved);
 	// Draws pixels to the window - assumes RGB format
 	void				Draw(unsigned char* pixels, unsigned width, unsigned height);
 	// Sets the title of the window

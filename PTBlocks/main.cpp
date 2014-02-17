@@ -76,6 +76,12 @@ int main() {
 	unsigned nIterations = 0;
 	while (app.IsRunning()) {
 		app.HandleEvents();
+		bool moved = false;
+		app.pollKeyboard(camera, moved);
+		if(moved) {
+			nIterations = 0;
+			camera.Reset();
+		}
 
 		renderer.ComputeColors(camera, scene, rng);
 		nIterations++;

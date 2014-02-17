@@ -12,7 +12,10 @@ Camera::Camera(const Point& position, const Vector& direction, const Vector& up,
 		u = Cross(dir, v);
 
 		//Set initial rotation
-		ry = 0;
+		Vector stdRy(1,0,0);
+		Vector actRy(direction);
+		actRy.y = 0;
+		ry = -acosf(Dot(actRy, stdRy));
 		rz = 0;
 
 		FoV *= 180.f / PI; // Convert FoV to radians
@@ -27,10 +30,26 @@ Camera::Camera(const Point& position, const Vector& direction, const Vector& up,
 		ymin = -1.f + dy / 2.f;
 }
 
-void Camera::walk(float x)
+void Camera::Walk(float x)
 {
-	pos.x += pos.x*cos(ry);
-	pos.z += -pos.x*sin(ry);
+	pos.x += x*dir.x;
+	pos.z += x*dir.z;
+}
+
+void Camera::Strafe(float x)
+{
+	pos.x += x*v.x;
+	pos.z += x*v.z;
+}
+
+void Camera::Elevate(float x)
+{
+	pos.y += x;
+}
+
+void Camera::Reset()
+{
+	film.Reset();
 }
 
 // Returns a ray from the viewpoint through pixel (x, y)

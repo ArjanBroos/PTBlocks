@@ -23,6 +23,8 @@ public:
 	void			DivideAllColors(unsigned n);
 	// Multiplies all colors by f
 	void			MultiplyAllColors(float f);
+	// Resets all pixels
+	void			Reset();
 
 private:
 	unsigned		width;	// Width in pixels
