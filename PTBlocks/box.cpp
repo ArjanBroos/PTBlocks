@@ -1,4 +1,5 @@
 #include "box.h"
+#include <cassert>
 
 Box::Box(Point& p)
 {
@@ -73,32 +74,33 @@ bool Box::Intersect(const Ray& ray, float& t) const
 		t = tmin;
 		return true;
 	}
-	else {
-		return false;
-	}
+	return false;
 }
 
 // Returns the normal of this sphere at point p
 Vector	Box::GetNormal(const Point& p) const
 {
-	if( fabsf(p.x - bounds[0].x) < 1e-5f) {
+	const float epsilon = 1e-5f;
+	if( fabsf(p.x - bounds[0].x) < epsilon) {
 		return Vector(-1.f,0.f,0.f);
 	}
-	if( fabsf(p.y - bounds[0].y) < 1e-5f) {
+	if( fabsf(p.y - bounds[0].y) < epsilon) {
 		return Vector(0.f,-1.f,0.f);
 	}
-	if( fabsf(p.z - bounds[0].z) < 1e-5f) {
+	if( fabsf(p.z - bounds[0].z) < epsilon) {
 		return Vector(0.f,0.f,-1.f);
 	}
-	if( fabsf(p.x - bounds[1].x) < 1e-5f) {
+	if( fabsf(p.x - bounds[1].x) < epsilon) {
 		return Vector(1.f,0.f,0.f);
 	}
-	if( fabsf(p.y - bounds[1].y) < 1e-5f) {
+	if( fabsf(p.y - bounds[1].y) < epsilon) {
 		return Vector(0.f,1.f,0.f);
 	}
-	if( fabsf(p.z - bounds[1].z) < 1e-5f) {
+	if( fabsf(p.z - bounds[1].z) < epsilon) {
 		return Vector(0.f,0.f,1.f);
 	}
+	assert(true);
+	return Vector(.0f,.0f,.0f);
 }
 
 Point Box::GetRandomPointOnSurface(RNG& rng) const
