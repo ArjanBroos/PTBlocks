@@ -27,6 +27,8 @@ public:
 	void Walk(float x);
 	void Strafe(float x);
 	void Elevate(float x);
+	void Yaw(float r);
+	void Pitch(float r);
 	void Reset();
 
 private:
@@ -36,8 +38,6 @@ private:
 	Vector		v;		// Right direction of film plane
 	Film		film;	// Film to project light on
 
-	float		ry;		// Degree of rotation around y-axis
-	float		rz;		// Degree of rotation around z-axis
 	float		xmin;	// Minimum normalized x-coordinate on film plane
 	float		ymin;	// Minimum normalized y-coordinate on film plane
 	float		dx;		// Difference in normalized x-coordinate of pixels on film plane

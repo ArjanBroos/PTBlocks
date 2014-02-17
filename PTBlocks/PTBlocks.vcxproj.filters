@@ -147,6 +147,9 @@
     <ClCompile Include="renderer.cpp">
       <Filter>Source Files\renderers</Filter>
     </ClCompile>
+    <ClCompile Include="box.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h">
@@ -220,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="renderer.h">
       <Filter>Header Files\renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="box.h">
+      <Filter>Header Files\shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

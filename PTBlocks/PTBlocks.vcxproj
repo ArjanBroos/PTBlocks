@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="application.cpp" />
     <ClCompile Include="arealight.cpp" />
+    <ClCompile Include="box.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="film.cpp" />
@@ -35,6 +36,7 @@
   <ItemGroup>
     <ClInclude Include="application.h" />
     <ClInclude Include="arealight.h" />
+    <ClInclude Include="box.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="film.h" />
@@ -88,10 +90,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Libraries\SFML-2.1-2012\include;D:\Libraries\CUDA\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Libraries\sfml2.1\include;C:\Libraries\CUDA\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\Libraries\SFML-2.1-2012\include;D:\Libraries\CUDA\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Libraries\sfml2.1\include;C:\Libraries\CUDA\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,7 +104,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Libraries\SFML-2.1-2012\lib;D:\Libraries\CUDA\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Libraries\sfml2.1\lib;C:\Libraries\CUDA\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>cudart.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -119,7 +121,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>D:\Libraries\SFML-2.1-2012\lib;D:\Libraries\CUDA\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Libraries\sfml2.1\lib;C:\Libraries\CUDA\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>cudart.lib;sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

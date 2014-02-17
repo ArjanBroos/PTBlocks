@@ -58,6 +58,22 @@ void Application::pollKeyboard(Camera& camera, bool& moved)
 		camera.Elevate(-.1f);
 		moved = true;
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+		camera.Yaw(.05f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+		camera.Yaw(-.05f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+		camera.Pitch(.05f);
+		moved = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+		camera.Pitch(-.05f);
+		moved = true;
+	}
 }
 
 // Draws to the window
