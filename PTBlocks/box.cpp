@@ -73,6 +73,9 @@ bool Box::Intersect(const Ray& ray, float& t) const
 		t = tmin;
 		return true;
 	}
+	else {
+		return false;
+	}
 }
 
 // Returns the normal of this sphere at point p
