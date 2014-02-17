@@ -42,6 +42,7 @@ void Camera::Elevate(float x)
 
 void Camera::Yaw(float r)
 {
+	//Rotate each vector around the y-axis
 	float x = dir.x*cosf(r) + dir.z*sinf(r);
 	float y = dir.y;
 	float z = -dir.x*sinf(r) + dir.z*cosf(r);
@@ -58,6 +59,7 @@ void Camera::Yaw(float r)
 
 void Camera::Pitch(float r)
 {
+	//Rotate dir above x-axis
 	Vector stdRy(1,0,0);
 	Vector actRy(dir);
 	actRy.y = 0;
@@ -66,15 +68,18 @@ void Camera::Pitch(float r)
 	float y = dir.y;
 	float z = -dir.x*sinf(rx) + dir.z*cosf(rx);
 	dir = Vector(x, y, z);
+	//Pitch dir
 	x = dir.x*cosf(r) + dir.z*sinf(r);
 	y = -dir.x*sinf(r) + dir.y*cosf(r);
 	z = dir.z;
 	dir = Vector(x, y, z);
+	//Rotate dir back
 	x = dir.x*cosf(-rx) + dir.z*sinf(-rx);
 	y = dir.y;
 	z = -dir.x*sinf(-rx) + dir.z*cosf(-rx);
 	dir = Vector(x, y, z);
 
+	//Rotate u above x-axis
 	stdRy = Vector(1,0,0);
 	actRy = Vector(u);
 	actRy.y = 0;
@@ -83,10 +88,12 @@ void Camera::Pitch(float r)
 	y = u.y;
 	z = -u.x*sinf(rx) + u.z*cosf(rx);
 	u = Vector(x, y, z);
+	//Pitch u
 	x = u.x*cosf(r) + u.z*sinf(r);
 	y = -u.x*sinf(r) + u.y*cosf(r);
 	z = u.z;
 	u = Vector(x, y, z);
+	//Rotate u back
 	x = u.x*cosf(-rx) + u.z*sinf(-rx);
 	y = u.y;
 	z = -u.x*sinf(-rx) + u.z*cosf(-rx);
