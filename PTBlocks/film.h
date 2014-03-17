@@ -17,6 +17,9 @@ public:
 	// Returns a read-only pointer to the pixels in the film
 	const Color*	GetPixels() const;
 
+	// Returns the aspect ratio of the film
+	float GetAspectRatio() const;
+
 	// Adds color to the given pixel
 	void			AddColor(const Color& c, unsigned x, unsigned y);
 	// Divides all pixel colors by n
@@ -29,5 +32,6 @@ public:
 private:
 	unsigned		width;	// Width in pixels
 	unsigned		height;	// Height in pixels
+	float			aspectRatio; // The aspect ratio of the film
 	Color*			pixels;	// Pixels on film
 };

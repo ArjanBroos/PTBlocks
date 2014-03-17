@@ -25,4 +25,6 @@ public:
 	Point& operator*=(float s);
 	Point operator/(float s) const;
 	Point& operator/=(float s);
+	bool operator>(const Point &p) const;
+	bool operator<(const Point &p) const;
 };

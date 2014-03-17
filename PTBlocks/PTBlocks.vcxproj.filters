@@ -85,6 +85,12 @@
     <Filter Include="Source Files\renderers">
       <UniqueIdentifier>{a3dee823-2f94-4ad4-8061-49f816dca527}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\octree">
+      <UniqueIdentifier>{9c5e5dca-5aaf-40b3-9e6f-b4e1362bf237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\octree">
+      <UniqueIdentifier>{c2c14a68-cbd5-464d-a992-c2d8b5490dea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp">
@@ -149,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="box.cpp">
       <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="node.cpp">
+      <Filter>Source Files\octree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -227,5 +236,16 @@
     <ClInclude Include="box.h">
       <Filter>Header Files\shapes</Filter>
     </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>Header Files\octree</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Header Files\octree</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="crossHair.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

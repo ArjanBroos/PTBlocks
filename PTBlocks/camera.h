@@ -30,12 +30,15 @@ public:
 	void Yaw(float r);
 	void Pitch(float r);
 	void Reset();
+	void CalcUV();
 
 private:
 	Point		pos;	// Position
 	Vector		dir;	// Direction camera is looking at
 	Vector		u;		// Up direction of film plane
+	Vector		up;		// Up direction of the world
 	Vector		v;		// Right direction of film plane
+	float		halfWidth;
 	Film		film;	// Film to project light on
 
 	float		xmin;	// Minimum normalized x-coordinate on film plane

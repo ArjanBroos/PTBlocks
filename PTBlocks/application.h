@@ -30,8 +30,11 @@ public:
 private:
 	sf::RenderWindow	window;		// The actual SFML window
 	sf::Image			image;		// End image to create texture from
+	sf::Image			image2;		// End image to create texture from
 	sf::Texture			texture;	// The texture holding the end-image
 	sf::Sprite			sprite;		// The sprite to draw texture with
+	sf::Texture			texture2;	// The texture holding the end-image
+	sf::Sprite			sprite2;		// The sprite to draw texture with
 
 	unsigned			width;		// Width of the SFML window
 	unsigned			height;		// Height of the SFML window

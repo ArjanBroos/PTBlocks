@@ -5,6 +5,11 @@
 // Initializes the application
 Application::Application(unsigned width, unsigned height, const std::string& title)
 	: window(sf::VideoMode(width, height), title.c_str()) {
+		image2.loadFromFile("crosshair.png");
+		texture2.loadFromImage(image2);
+		sprite2.setTexture(texture2);
+		sprite2.scale(2,2);
+		sprite2.setPosition(width/2 - sprite2.getScale().x * image2.getSize().x/2, height/2 - sprite2.getScale().y * image2.getSize().y/2);
 }
 
 // Handles input events
@@ -85,6 +90,7 @@ void Application::Draw(unsigned char* pixels, unsigned width, unsigned height) {
 
 	window.clear();
 	window.draw(sprite);
+	window.draw(sprite2);
 	window.display();
 }
 

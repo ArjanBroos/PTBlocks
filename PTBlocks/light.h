@@ -3,9 +3,10 @@
 #include "color.h"
 #include "geometry.h"
 #include "rng.h"
+#include "object.h"
 
 // The abstract base class for all lights
-class Light {
+class Light: public Object {
 public:
 	Color			c;	// Color of light
 	float			i;	// Intensity of light

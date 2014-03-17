@@ -22,6 +22,7 @@
     <ClCompile Include="light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mirrormaterial.cpp" />
+    <ClCompile Include="node.cpp" />
     <ClCompile Include="plane.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="pointlight.cpp" />
@@ -48,6 +49,8 @@
     <ClInclude Include="material.h" />
     <ClInclude Include="math.h" />
     <ClInclude Include="mirrormaterial.h" />
+    <ClInclude Include="node.h" />
+    <ClInclude Include="object.h" />
     <ClInclude Include="plane.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="pointlight.h" />
@@ -59,6 +62,9 @@
     <ClInclude Include="shape.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="crossHair.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5321285D-E0AB-4C16-8E70-70FCE88DA83F}</ProjectGuid>

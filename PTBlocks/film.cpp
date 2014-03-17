@@ -1,7 +1,7 @@
 #include "film.h"
 
 // Initializes a width x height film with only black pixels
-Film::Film(unsigned width, unsigned height) : width(width), height(height) {
+Film::Film(unsigned width, unsigned height) : width(width), height(height), aspectRatio((float) width / (float) height){
 	pixels = new Color[width*height];
 }
 
@@ -18,6 +18,11 @@ unsigned Film::GetWidth() const {
 // Returns the height of the film in pixels
 unsigned Film::GetHeight() const {
 	return height;
+}
+
+// Returns the aspect ratio of the film
+float Film::GetAspectRatio() const {
+	return aspectRatio;
 }
 
 // Returns a read-only pointer to the pixels in the film
